@@ -3,46 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Drona Agrawal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #ffffff;          /* Pure clean white background */
+            --text: #1e293b;        /* Deep charcoal slate for sharp text readability */
+            --light-text: #64748b;  /* Muted slate gray for subtitles */
+            --accent: #0f766e;      /* Deep academic teal for a professional, grounding color accent */
+            --border: #e2e8f0;       /* Light border separation color */
+        }
+
+        /* Essential reset and page centering framework */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            background-color: var(--bg);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center; /* Horizontally centers the entire layout container on the viewport */
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        /* Master Centered Container */
+        .wrapper {
+            max-width: 900px;
+            width: 100%;
+            margin: 100px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 60px;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+
+        /* Left Column: Fixed Profile Sidebar */
+        .sidebar {
+            text-align: center;
+            position: sticky;
+            top: 100px;
+        }
+
+        /* Circular profile picture styling */
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%; /* Makes the frame perfectly round */
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .name {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            letter-spacing: -0.02em;
+            color: var(--text);
+        }
+
+        .title {
+            font-size: 0.95rem;
+            color: var(--light-text);
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+
+        .institution {
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 28px;
+        }
+
+        /* Social Icons formatting */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.25rem;
+        }
+
+        .social-icons a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent); /* Changes cleanly to teal on hover */
+        }
+
+        .cv-text {
+            font-weight: 700;
+            font-size: 1.15rem;
+            font-family: system-ui, sans-serif;
+            line-height: 1;
+        }
+
+        /* Right Column: Main Research Profile Content */
+        .content h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 0 0 20px 0;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+
+        .bio-text p {
+            font-size: 1.05rem;
+            color: #334155;
+            margin-bottom: 20px;
+        }
+
+        .bio-text a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .bio-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Interests and Education Section Split */
+        .meta-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 45px;
+            border-top: 1px solid var(--border);
+            padding-top: 35px;
+        }
+
+        .meta-sections h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0 0 16px 0;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
+        }
+
+        .meta-sections ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .meta-sections li {
+            margin-bottom: 12px;
+            color: #334155;
+            font-size: 0.95rem;
+        }
+
+        /* Clean list styling for degree entries */
+        .edu-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .edu-item i {
+            color: var(--light-text);
+            margin-top: 4px;
+            font-size: 0.85rem;
+        }
+
+        .edu-details {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .edu-inst {
+            color: var(--light-text);
+        }
+
+        /* Mobile Breakpoint rules */
+        @media (max-width: 768px) {
+            body { align-items: flex-start; }
+            .wrapper { grid-template-columns: 1fr; gap: 50px; margin: 50px auto; padding: 0 24px; }
+            .sidebar { position: static; text-align: center; }
+            .meta-sections { grid-template-columns: 1fr; gap: 35px; }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <h1>Your Name</h1>
-        <p>Chemical Engineering | Optimization | Machine Learning</p>
-    </header>
+    <div class="wrapper">
+        
+        <aside class="sidebar">
+            <img src="profile.jpg" alt="Drona Agrawal" class="profile-pic">
+            <h1 class="name">Drona Agrawal</h1>
+            <div class="title">Ph.D. Student in Chemical and Biomolecular Engineering</div>
+            <a href="https://nus.edu.sg" class="institution" target="_blank">National University of Singapore</a>
+            
+            <div class="social-icons">
+                <a href="mailto:drona.agwl2003@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <!-- <a href="https://scholar.google.com" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a> -->
+                <a href="https://github.com/yourusername" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/drona-agrawal-b92178260/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="Drona_CV.pdf" target="_blank" title="Curriculum Vitae" class="cv-text">cv</a>
+            </div>
+        </aside>
 
-    <section>
-        <h2>About Me</h2>
-        <p>
-            I work on optimization, pooling problems,
-            differentiable optimization, and machine learning.
-        </p>
-    </section>
+        <main class="content">
+            <h2>About</h2>
+            
+            <div class="bio-text">
+                <p>I am a Ph.D. student in the Department of Chemical and Biomolecular Engineering at the <a href="https://nus.edu.sg" target="_blank">National University of Singapore</a>. 
+                    </p>
+                
+                <p>I have experience working on developing computational methods for solving large and complex systems which are in
+                    general hard to solve. I am particularly interested in developing methods that can leverage machine learning to accelerate the solution of these systems, and applying these methods to problems in chemical engineering and related fields.
+                </p>
+            </div>
 
-    <section>
-        <h2>Projects</h2>
+            <div class="meta-sections">
+                <div>
+                    <h3>Interests</h3>
+                    <ul>
+                        <li>Control Theory</li>
+                        <li>Machine Learning based Optimization</li>
+                        <li>Numerical Methods</li>
+                        <li>Multiphase Transport Phenomena</li>
+                    </ul>
+                </div>
 
-        <div class="project">
-            <h3>Pooling Problem Optimization</h3>
-            <p>
-                Developed JuMP and Pyomo formulations for large-scale pooling problems.
-            </p>
-        </div>
+                <div>
+                    <h3>Education</h3>
+                    
+                    <div class="edu-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div class="edu-details">
+                            <div class="edu-degree">Ph.D. in Chemical Engineering</div>
+                            <div class="edu-inst">National University of Singapore <br> <span style="font-size: 0.85rem;">2026 - Present</span></div>
+                        </div>
+                    </div>
 
-        <div class="project">
-            <h3>Differentiable Optimization</h3>
-            <p>
-                Integrated neural networks with optimization pipelines.
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <h2>Contact</h2>
-        <p>Email: youremail@example.com</p>
-    </section>
+                    <div class="edu-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div class="edu-details">
+                            <div class="edu-degree">B.E. in Chemical Engineering</div>
+                            <div class="edu-inst">BITS Pilani, KK Birla Goa Campus <br> <span style="font-size: 0.85rem;">Minor in Physics | 2022 - 2025</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+    </div>
 
 </body>
 </html>
