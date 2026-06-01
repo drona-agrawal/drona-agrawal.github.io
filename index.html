@@ -148,7 +148,7 @@
             padding-top: 35px;
         }
 
-        .meta-sections h3 {
+        .meta-sections h3, .news-section h3 {
             font-size: 1.15rem;
             font-weight: 600;
             margin: 0 0 16px 0;
@@ -197,12 +197,55 @@
             color: var(--light-text);
         }
 
+        /* News Section Styling */
+        .news-section {
+            margin-top: 45px;
+            border-top: 1px solid var(--border);
+            padding-top: 35px;
+        }
+
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .news-item {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 16px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            align-items: baseline;
+        }
+
+        .news-date {
+            color: var(--light-text);
+            font-weight: 500;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .news-content {
+            color: #334155;
+        }
+
+        .news-content a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .news-content a:hover {
+            text-decoration: underline;
+        }
+
         /* Mobile Breakpoint rules */
         @media (max-width: 768px) {
             body { align-items: flex-start; }
             .wrapper { grid-template-columns: 1fr; gap: 50px; margin: 50px auto; padding: 0 24px; }
             .sidebar { position: static; text-align: center; }
             .meta-sections { grid-template-columns: 1fr; gap: 35px; }
+            .news-item { grid-template-columns: 1fr; gap: 4px; }
+            .news-date { font-size: 0.85rem; font-weight: 600; }
         }
     </style>
 </head>
@@ -218,7 +261,6 @@
             
             <div class="social-icons">
                 <a href="mailto:drona.agwl2003@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                <!-- <a href="https://scholar.google.com" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a> -->
                 <a href="https://github.com/drona-agrawal" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/drona-agrawal-b92178260/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="Drona_CV.pdf" target="_blank" title="Curriculum Vitae" class="cv-text">cv</a>
@@ -266,6 +308,37 @@
                             <div class="edu-inst">BITS Pilani, KK Birla Goa Campus <br> <span style="font-size: 0.85rem;">Minor in Physics | 2022 - 2025</span></div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <div class="news-section">
+                <h3>News</h3>
+                <div class="news-list">
+                    
+                    <div class="news-item">
+                        <div class="news-date">Aug 2026</div>
+                        <div class="news-content">Will be starting my Ph.D. journey at the National University of Singapore (NUS) under <a href="https://blog.nus.edu.sg/wulab/" target="_blank">Prof. Zhe Wu</a> through NUS Research Scholarship (Industry Relevant) with <a href="https://www.gsk.com/en-gb/locations/singapore/" target="_blank">GSK</a>, Tuas, Singapore.</div>
+                    </div>
+
+                    <div class="news-item">
+                        <div class="news-date">Jan 2026</div>
+                        <div class="news-content">Started as Research Intern at Impact Lab, Department of Chemical Engineering, BITS Pilani, Goa Campus under <a href="https://www.bits-pilani.ac.in/goa/sundari-r/" target="_blank">Prof. Sundari Ramji</a>.</div>
+                    </div>
+
+                    <div class="news-item">
+                        <div class="news-date">Dec 2025</div>
+                        <div class="news-content">Graduated with a B.E. in Chemical Engineering and a Minor in Physics from BITS Pilani, Goa Campus.</div>
+                    </div>
+                    
+                    <div class="news-item">
+                        <div class="news-date">May 2025</div>
+                        <div class="news-content">Started as Research Intern at Davidson School of Chemical Engineering, Purdue University under <a href="https://canli1.github.io/li/" target="_blank">Prof. Can Li</a>.</div>
+                    </div>
+
+                    <div class="news-item">
+                        <div class="news-date">Apr 2025</div>
+                        <div class="news-content">Received "Emerging Leader in Chemical Engineering" award from Dept. of Chemical Engineering, BITS Pilani, Goa Campus to recognise my efforts while serving as the President of the Chemical Engineering Association.</div>
+                    <div>
                 </div>
             </div>
             
